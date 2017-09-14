@@ -47,5 +47,5 @@ makeJar.dependsOn(deleteBuild, build)
         setResult(RESULT_OK, data);
         finish();
         ```
-### 方式2：fragment
+###  第er种方式：fragment
 相对于Activity，fragment是比较方便点，看个人喜好吧
