@@ -2,7 +2,9 @@
 仿照美团地址选择器
 
 
-### 依赖库的build.gradle
+### 依赖库
+####build.gradle
+'''
 def SDK_BASENAME = "TestSdk";
 def SDK_VERSION = "_V1.0";
 def sdkDestinationPath = "build";
@@ -20,4 +22,4 @@ task makeJar(type: Jar) {
 }
 
 makeJar.dependsOn(deleteBuild, build)
-
+'''
