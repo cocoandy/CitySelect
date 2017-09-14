@@ -31,21 +31,21 @@ makeJar.dependsOn(deleteBuild, build)
 这个方式，我们需要在AndroidMenifest.xml中对Activity进行注册
 ```java
   <activity android:name="com.gavin.city.citylibrary.CityPickerActivity"/>
-  ```
+```
   在代码中的点击事件中跳转
-  ```java
+```java
   Intent intent = new Intent(MainActivity.this, CityPickerActivity.class);
                 intent.putExtra("city","深圳市");
                 startActivityForResult(intent,REQUEST_CODE_PICK_CITY);
-                ```
+```
  注释：因为本库相对于别的类似的库去掉了定位功能，减少包的大小，但前位置需要用户自己传入 intent.putExtra("city","深圳市");
  
  返回：选中所选的地方库里的操作city是返回的所选城市
- ```java
+```java
  Intent data = new Intent();
         data.putExtra(KEY_PICKED_CITY, city);
         setResult(RESULT_OK, data);
         finish();
-        ```
+```
 ###  第er种方式：fragment
 相对于Activity，fragment是比较方便点，看个人喜好吧
