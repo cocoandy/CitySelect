@@ -3,8 +3,9 @@
 
 
 ### 依赖库
+
 ####build.gradle
-'''
+```java
 def SDK_BASENAME = "TestSdk";
 def SDK_VERSION = "_V1.0";
 def sdkDestinationPath = "build";
@@ -22,4 +23,4 @@ task makeJar(type: Jar) {
 }
 
 makeJar.dependsOn(deleteBuild, build)
-'''
+```
