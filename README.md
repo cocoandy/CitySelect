@@ -24,3 +24,28 @@ task makeJar(type: Jar) {
 
 makeJar.dependsOn(deleteBuild, build)
 ```
+### 在项目中使用
+#### 第一种方式：Activity
+
+第一种方式不是很方便，应该是不是很灵活，用的是启动跳转到库里的activity：com.gavin.city.citylibrary.CityPickerActivity
+这个方式，我们需要在AndroidMenifest.xml中对Activity进行注册
+```java
+  <activity android:name="com.gavin.city.citylibrary.CityPickerActivity"/>
+  ```
+  在代码中的点击事件中跳转
+  ```java
+  Intent intent = new Intent(MainActivity.this, CityPickerActivity.class);
+                intent.putExtra("city","深圳市");
+                startActivityForResult(intent,REQUEST_CODE_PICK_CITY);
+                ```
+ 注释：因为本库相对于别的类似的库去掉了定位功能，减少包的大小，但前位置需要用户自己传入 intent.putExtra("city","深圳市");
+ 
+ 返回：选中所选的地方库里的操作city是返回的所选城市
+ ```java
+ Intent data = new Intent();
+        data.putExtra(KEY_PICKED_CITY, city);
+        setResult(RESULT_OK, data);
+        finish();
+        ```
+### 方式2：fragment
+相对于Activity，fragment是比较方便点，看个人喜好吧
