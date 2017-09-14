@@ -4,7 +4,7 @@
 
 ### 依赖库
 
-#### build.gradle
+#### build.gradle 用于打包aar
 ```java
 def SDK_BASENAME = "TestSdk";
 def SDK_VERSION = "_V1.0";
